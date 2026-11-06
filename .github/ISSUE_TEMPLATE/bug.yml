@@ -1,0 +1,49 @@
+name: 문제 알리기
+description: Archio를 쓰다가 생긴 문제를 알려 주세요.
+title: "[문제] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        알려 주셔서 고맙습니다. 회사·고객 이름이나 실제 도메인·주소는 지운 뒤 적어 주세요.
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      description: 도움말 › Archio 정보에 있습니다.
+      placeholder: 1.0.0-beta.3
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 어떤 판을 쓰셨나요
+      options:
+        - 설치판
+        - 설치 없이 쓰는 실행판(zip)
+        - 명령줄(CLI)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 어떻게 하면 생기나요
+      placeholder: |
+        1. 템플릿 "웹 3계층"으로 시작
+        2. RDS를 Multi-AZ로 바꿈
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 것과 실제
+      placeholder: 이렇게 될 줄 알았는데 이렇게 됐어요.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 화면·파일(선택)
+      description: 캡처를 붙이거나, 정보를 지운 .archio 파일을 올려 주세요.
